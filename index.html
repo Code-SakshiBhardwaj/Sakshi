@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Saks App</title>
+        <link rel="stylesheet" href="app.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!--Google Font-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="SaksApp" ng-controller="GameController">
+        <div class="jumbotron">
+            <h1 class="text-uppercase text-warning font-weight-bold text-center mt-5"> Guesses Left :: {{guesses}}</h1>
+
+            <h2 class="font-italic text-danger font-weight-bold text-left ml-5 mt-5">
+                <a href="#"><i class="fa fa-thumbs-down fa-5x text-danger"></i></a>
+                Your Incorrect Guesses :: <span ng-repeat="letter in incorrectLettersChosen">
+                {{letter}}
+            </span></h2>
+               <h2 class="font-italic text-success font-weight-bold text-right mr-5 mt-5">
+                <a href="#"><i class="fa fa-thumbs-up fa-5x text-success"></i></a>
+
+                Your Correct Guesses :: <span ng-repeat="letter in correctLettersChosen">
+                    {{letter}}
+                </span></div>
+            </h2>
+            <h2 class="font-italic text-primary font-weight-bold text-center mt-5">You have to guess: {{displayWord}}</h2>
+            <div>
+                <div class="font-italic text-primary font-weight-bold text-center mt-5 mb-5">
+                    <input type="text" name="guess" ng-model="input.letter">
+                    <button ng-click="letterChosen()">Submit</button>
+                </div>
+            </div>
+        </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
